@@ -111,7 +111,6 @@ def get_spixel_init(num_spixels, img_width, img_height):
                          spixel_height)
     w_coords = np.arange(-spixel_width / 2., img_width + spixel_width - 1,
                          spixel_width)
-    h_grid, w_grid = np.meshgrid(h_coords, w_coords, indexing = 'ij')
     spix_values = np.int32(np.arange(0, k_w * k_h).reshape((k_h, k_w)))
     spix_values = np.pad(spix_values, 1, 'symmetric')
     f = interpolate.RegularGridInterpolator((h_coords, w_coords), spix_values, method='nearest')
